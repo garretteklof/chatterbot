@@ -11,16 +11,23 @@ const io = socketIO(server);
 app.use(express.static("public"));
 
 io.on("connection", socket => {
-  console.log("new user connected");
-
   socket.emit("newMessage", {
-    from: "me",
-    text: "Hello",
-    createdAt: 123
+    from: "Admin",
+    text: "Welcome to the chat app",
+    createdAt: new Date().getTime()
   });
-
-  socket.on("createMessage", message => {
-    console.log(message);
+  socket.broadcast.emit("newMessage", {
+    from: "Admin",
+    text: "New user joined",
+    createdAt: new Date().getTime()
+  });
+  socket.on("createMessage", ({ from, text }) => {
+    console.log(from, text);
+    io.emit("newMessage", {
+      from,
+      text,
+      createdAt: new Date().getTime()
+    });
   });
 
   socket.on("disconnect", () => {
