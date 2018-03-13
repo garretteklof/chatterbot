@@ -33,13 +33,25 @@ io.on("connection", socket => {
       .to(room)
       .emit("newMessage", generateMessage("admin", `${name} has joined!`));
   });
-  socket.on("createMessage", ({ from, text }, callback) => {
-    io.emit("newMessage", generateMessage(from, text));
+
+  socket.on("createMessage", ({ text }, callback) => {
+    const user = users.getUser(socket.id);
+    if (user && isRealString(text)) {
+      io.to(user.room).emit("newMessage", generateMessage(user.name, text));
+    }
     callback();
   });
 
   socket.on("createLocationMessage", ({ lat, lng }) => {
-    io.emit("newLocationMessage", generateLocationMessage("admin", lat, lng));
+    const user = users.getUser(socket.id);
+    if (user) {
+      io
+        .to(user.room)
+        .emit(
+          "newLocationMessage",
+          generateLocationMessage(user.name, lat, lng)
+        );
+    }
   });
 
   socket.on("disconnect", () => {
