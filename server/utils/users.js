@@ -19,7 +19,8 @@ class Users {
   }
   getUserList(room) {
     const users = this.users.filter(user => user.room === room);
-    return users.map(({ name }) => name);
+    const names = users.map(({ name }) => name);
+    return ["Rob O. Bot"].concat(names);
   }
 }
 

@@ -27,11 +27,118 @@ io.on("connection", socket => {
     io.to(room).emit("updateUserList", users.getUserList(room));
     socket.emit(
       "newMessage",
-      generateMessage("admin", "welcome to the chat app!")
+      generateMessage("Rob O. Bot", "Hello! Welcome to Chatterbot!")
     );
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "This application is pretty self-explanatory."
+          )
+        ),
+      3000
+    );
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "First, join a chat room with your friends."
+          )
+        ),
+      7000
+    );
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "Then, send each other messages in real-time!"
+          )
+        ),
+      10000
+    );
+
+    setTimeout(
+      () =>
+        socket.emit("newMessage", generateMessage("Rob O. Bot", "😎 😎 😎")),
+      12000
+    );
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "If you do have any questions though, please do NOT hesitate to ask!"
+          )
+        ),
+      15000
+    );
+
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "I just won't actually be able to answer any of them."
+          )
+        ),
+      18000
+    );
+
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage("Rob O. Bot", "The questions.")
+        ),
+      20000
+    );
+
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "Because I'm not actually all that special."
+          )
+        ),
+      22000
+    );
+
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "Just a bundle of hard-coded nonsense :("
+          )
+        ),
+      24000
+    );
+    setTimeout(
+      () =>
+        socket.emit(
+          "newMessage",
+          generateMessage(
+            "Rob O. Bot",
+            "But, I promise, I do read every single one!"
+          )
+        ),
+      27000
+    );
+
     socket.broadcast
       .to(room)
-      .emit("newMessage", generateMessage("admin", `${name} has joined!`));
+      .emit("newMessage", generateMessage("Rob O. Bot", `${name} has joined!`));
   });
 
   socket.on("createMessage", ({ text }, callback) => {
@@ -60,7 +167,10 @@ io.on("connection", socket => {
       io.to(user.room).emit("updateUserList", users.getUserList(user.room));
       io
         .to(user.room)
-        .emit("newMessage", generateMessage("admin", `${user.name} has left.`));
+        .emit(
+          "newMessage",
+          generateMessage("Rob O. Bot", `${user.name} has left.`)
+        );
     }
   });
 });

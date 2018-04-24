@@ -1,3 +1,12 @@
+.github > img {
+  height: 40px;
+  width: 40px;
+  fill: #393d3f;
+}
+
+body {
+  background-color: #fbfbf2;
+}
 button,
 button:hover {
   border: none;
@@ -16,27 +25,38 @@ button:hover {
     Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 0.95rem;
+  color: #393d3f;
 }
 li,
 ul {
   list-style-position: inside;
 }
-h3 {
+h1 {
   font-weight: 600;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  max-width: 250px;
+}
+
+h4 > a {
+  font-size: inherit;
 }
 button {
-  background: #265f82;
+  background: #ffa400;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 button:hover {
-  background: #1f4c69;
+  background: #f9a03f;
 }
 button:disabled {
   cursor: default;
-  background: #698ea5;
+  background: #ffc55c;
 }
 .centered-form {
   display: flex;
@@ -44,42 +64,50 @@ button:disabled {
   height: 100vh;
   width: 100vw;
   justify-content: center;
+  flex-direction: column;
   background: -moz-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
+
   background: -webkit-gradient(
     linear,
     left top,
     right bottom,
-    color-stop(0, rgba(49, 84, 129, 1)),
-    color-stop(100%, rgba(39, 107, 130, 1))
+    color-stop(0, rgba(244, 241, 222, 1)),
+    color-stop(100%, rgba(246, 239, 166, 1))
   );
   background: -webkit-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: -o-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: -ms-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: linear-gradient(
     325deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
 }
+
+.centered-form__logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
 .centered-form__form {
-  background: rgba(250, 250, 250, 0.9);
-  border: 1px solid #e1e1e1;
+  background: rgba(251, 251, 242, 0.9);
+  border: 1px solid #fbfbf2;
   border-radius: 5px;
   padding: 0 20px;
   margin: 20px;
@@ -97,11 +125,23 @@ button:disabled {
 }
 .form-field input,
 .form-field select {
-  border: 1px solid #e1e1e1;
+  border: 1px solid #fbfbf2;
   padding: 10px;
+}
+.form-field input:focus {
+  outline-color: #f9a03f;
 }
 .chat {
   display: flex;
+}
+.chat__logo {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.chat__logout {
+  margin-left: 20px;
 }
 .chat__sidebar {
   overflow-y: scroll;
@@ -109,51 +149,53 @@ button:disabled {
   height: 100vh;
   background: -moz-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
+
   background: -webkit-gradient(
     linear,
     left top,
     right bottom,
-    color-stop(0, rgba(49, 84, 129, 1)),
-    color-stop(100%, rgba(39, 107, 130, 1))
+    color-stop(0, rgba(244, 241, 222, 1)),
+    color-stop(100%, rgba(246, 239, 166, 1))
   );
   background: -webkit-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: -o-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: -ms-linear-gradient(
     125deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
   background: linear-gradient(
     325deg,
-    rgba(39, 107, 130, 1) 0,
-    rgba(49, 84, 129, 1) 100%
+    rgba(244, 241, 222, 1) 0,
+    rgba(246, 239, 166, 1) 100%
   );
 }
 .chat__footer,
 .chat__sidebar li {
-  background: #e6eaee;
+  background: #f4f1de;
   padding: 10px;
 }
 .chat__sidebar h3 {
-  color: #e6eaee;
+  color: #393d3f;
   margin: 10px 20px;
   text-align: left;
 }
 .chat__sidebar li {
-  border: 1px solid #e1e1e1;
+  border: 1px solid #f4f1de;
   border-radius: 5px;
   margin: 10px;
+  font-weight: 600;
 }
 .chat__main {
   display: flex;
@@ -182,6 +224,10 @@ button:disabled {
   border: none;
   padding: 10px;
   flex-grow: 1;
+  background: #fbfbf2;
+}
+.chat__footer input:focus {
+  outline-color: #f9a03f;
 }
 .message {
   padding: 10px;

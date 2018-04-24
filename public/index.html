@@ -3,17 +3,19 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>Join | ChatApp</title>
+  <title>Join | Chatterbot</title>
   <meta name='viewport' content='width=device-width initial-scale=1 user-scalable=no'>
   <link rel='stylesheet' href='/css/styles.css'>
 </head>
 
 <body class='centered-form'>
+  <img src='/images/chatterbot.svg' class='centered-form__logo' />
+  <h1> CHATTERBOT </h1>
+  <h4> A very simple chat application made with
+    <a href='http://socket.io/' target='_blank'>Socket.io</a>
+  </h4>
   <div class='centered-form__form'>
     <form action='/chat.html'>
-      <div class='form-field'>
-        <h3>Join a Chat</h3>
-      </div>
       <div class='form-field'>
         <label>Username</label>
         <input type='text' name='name' autofocus />
@@ -27,7 +29,9 @@
       </div>
     </form>
   </div>
-
+  <a href='https://github.com/garretteklof/chatterbot' target='_blank' class='github'>
+    <img src='/images/github.svg' />
+  </a>
 </body>
 
 </html>

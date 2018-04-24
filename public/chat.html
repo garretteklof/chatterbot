@@ -3,14 +3,17 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>Chat | ChatApp</title>
+  <title>Chat | Chatterbot</title>
   <link rel='stylesheet' href='/css/styles.css'>
 </head>
 
 <body class='chat'>
   <div class='chat__sidebar'>
-    <h3>People</h3>
+    <a href='/' onclick='javascript:window.location.reload();'>
+      <img src='/images/chatterbot.svg' class='chat__logo' />
+    </a>
     <div id='users'></div>
+    <a href='/' class='chat__logout' onclick='javascript:window.location.reload();'>Logout</a>
   </div>
   <div class='chat__main'>
     <ol id='messages' class='chat__messages'></ol>
